@@ -1,12 +1,11 @@
-import About from './components/About';
-import Hero from './components/hero';
+import Home from './components/Home';
 
-export default function Home() {
-  return (
-    <main>
-      <Hero />
-      <About />
-    </main>
-  );
-}
+const Page = () => {
+  return(
+    <div>
+      <Home />
+    </div>
+  ) ;
+};
 
+export default Page;
