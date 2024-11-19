@@ -11,6 +11,17 @@
   }
 }
 
+
+@layer base{
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .grid-image{
+    @apply absolute aspect-auto top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%];
+  }
+}
+
 .noise-background {
   position: relative;
   isolation: isolate;

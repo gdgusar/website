@@ -6,7 +6,6 @@ const Page = () => {
   return(
     <div>
       <Home />
-      {/* <h1>START FROM HERE</h1> */}
       <BentoGrid />
     </div>
   ) ;
