@@ -14,7 +14,7 @@ export const NoiseBackground: React.FC<NoiseBackgroundProps> = ({
       <div 
         className="pointer-events-none fixed inset-0 h-full w-full opacity-50 mix-blend-soft-light"
         style={{
-          backgroundImage: `url(assets/nnnoise.vg)`,
+          backgroundImage: `url(assets/svgs/nnnoise.svg)`,
           zIndex: 100
         }}
       />
