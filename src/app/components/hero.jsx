@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
-const Home = () => {
+const hero = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen relative overflow-hidden">
             <div className="absolute inset-0 w-full h-full">
@@ -10,8 +10,8 @@ const Home = () => {
                     alt="Tunnel Background"
                     fill
                     priority
-                    sizes="100vh"
-                    className="opacity-100 object-contain p-2 md:p-8 lg:p-12"
+                    
+                    className="opacity-100 object-contain p-2 md:p-4 lg:p-8"
                 />
             </div>
             <div className="z-10 text-center">
@@ -22,4 +22,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default hero;
