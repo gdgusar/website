@@ -14,7 +14,6 @@ const Home = () => {
                     className="opacity-100 object-contain p-2 md:p-8 lg:p-12"
                 />
             </div>
-           
             <div className="z-10 text-center">
                 <h1 className="text-4xl md:text-6xl font-bold text-blue-600 font-sora mb-4">GDG-USAR</h1>
                 <p className="mt-4 text-base md:text-lg text-[#a92a2a] font-noto-sans">This is a boilerplate component.</p>
