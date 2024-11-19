@@ -14,7 +14,7 @@ const BentoGrid: React.FC = () => {
             height={448}
           />
           <Image
-            className="w-40 grid-image"
+            className="w-36 grid-image hover:scale-item"
             src="/assets/illustrations/game-console.png"
             alt="game console"
             width={237}
@@ -30,7 +30,7 @@ const BentoGrid: React.FC = () => {
             height={464}
           />
           <Image
-            className="w-48 grid-image"
+            className="w-48 grid-image hover:scale-item"
             src="/assets/illustrations/earth.png"
             alt="earth"
             width={237}
@@ -46,7 +46,7 @@ const BentoGrid: React.FC = () => {
             height={464}
           />
           <Image
-            className="w-48 grid-image"
+            className="w-48 grid-image hover:scale-item"
             src="/assets/illustrations/mikes.png"
             alt="mikes"
             width={237}
@@ -62,10 +62,9 @@ const BentoGrid: React.FC = () => {
             height={448}
           />
           <Image
-            className="w-56 grid-image"
+            className="w-56 grid-image hover:scale-item"
             src="/assets/illustrations/hashtag.png"
             alt="hashtag"
-            layout="intrinsic"
             width={237}
             height={355}
           />
