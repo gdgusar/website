@@ -37,7 +37,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sora: ['Sora', 'sans-serif'], 
+        sora: ['var(--font-sora)'],
+        'noto-sans': ['var(--font-noto-sans)'],
       },
     },
   },

@@ -1,18 +1,17 @@
-import localFont from "next/font/local";
 import "./globals.css";
+import { Sora, Noto_Sans } from 'next/font/google';
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const sora = Sora({
+  subsets: ['latin'],
+  variable: '--font-sora',
+  weight: ['400', '700'],
 });
 
-
+const notoSans = Noto_Sans({
+  subsets: ['latin'],
+  variable: '--font-noto-sans',
+  weight: ['400', '700'],
+});
 
 export const metadata = {
   title: "GDG USAR",
@@ -21,8 +20,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className="noise-background">
+    <html lang="en" className={`${sora.variable} ${notoSans.variable}`}>
+      <body className={`noise-background font-noto-sans`}>
         {children}
       </body>
     </html>
