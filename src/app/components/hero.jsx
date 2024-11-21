@@ -1,16 +1,17 @@
 import React from 'react';
 import Image from 'next/image';
+import Scene from './Scene';
 
 const hero = () => {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen relative overflow-hidden">
+            
             <div className="absolute inset-0 w-full h-full">
                 <Image
                     src="/assets/svgs/Tunnel.svg"
                     alt="Tunnel Background"
                     fill
                     priority
-                    
                     className="opacity-100 object-contain p-2 md:p-4 lg:p-8"
                 />
             </div>
