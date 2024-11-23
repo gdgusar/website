@@ -1,12 +1,14 @@
-import Home from './components/hero';
-import BentoGrid from './components/BentoGrid';
-const Page = () => {
-  return(
-    <div>
-      <Home />
-      <BentoGrid />
-    </div>
-  ) ;
-};
+import React from 'react';
+import Hero from './components/hero';
+import Scene from './components/Scene';
 
-export default Page;
+export default function Home() {
+  return (
+  <div>
+    <Hero />
+    <Scene />
+  </div>
+    
+  );
+}
+
