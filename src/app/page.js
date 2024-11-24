@@ -9,7 +9,6 @@ export default function Home() {
   return (
   <div>
     <Hero />
-    <Scene />
     <BentoGrid />
     <WeTextSection />
   </div>
