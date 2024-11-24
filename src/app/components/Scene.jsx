@@ -19,7 +19,6 @@ function Scene() {
         <ambientLight intensity={0.5} />
         <pointLight position={[10, 10, 10]} />
         <Box />
-        <OrbitControls />
       </Suspense>
     </Canvas>
   );
