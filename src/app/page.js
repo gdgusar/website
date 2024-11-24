@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Hero from './components/hero';
 import Footer from './components/Footer';
 import BentoGrid from './components/BentoGrid';
