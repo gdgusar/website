@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className="relative flex items-center justify-center w-full h-screen">
       {/* Tunnel SVG with margins */}
-      <div className="absolute inset-0 m-4 sm:m-6 md:m-8 ">
+      <div className="absolute inset-0 m-2 sm:m-4 md:m-8 ">
         <div className="relative w-full h-full">
           <Image
             src="/assets/svgs/Tunnel.svg"
