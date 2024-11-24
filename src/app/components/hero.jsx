@@ -1,23 +1,26 @@
 import React from 'react';
 import Image from 'next/image';
-import Scene from './Scene'; // Adjust the path if Scene is in another folder
+import Scene from './Scene';
 
 const Hero = () => {
   return (
     <div className="relative flex items-center justify-center w-full h-screen">
-      {/* Tunnel SVG */}
-      <div className="absolute inset-0 w-full h-full">
-        <Image
-          src="/assets/svgs/Tunnel.svg"
-          layout="fill"
-          alt="Tunnel"
-          className="object-contain"
-        />
+      {/* Tunnel SVG with margins */}
+      <div className="absolute inset-0 m-4 sm:m-6 md:m-8 ">
+        <div className="relative w-full h-full">
+          <Image
+            src="/assets/svgs/Tunnel.svg"
+            layout="fill"
+            priority
+            alt="Tunnel"
+            className="object-contain"
+          />
+        </div>
       </div>
 
       {/* 3D Scene */}
       <div className="absolute inset-0">
-        <Scene /> {/* Rendering the Scene component */}
+        <Scene />
       </div>
 
       {/* GDG-USAR Text */}
