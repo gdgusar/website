@@ -74,6 +74,7 @@ const WeTextSection: React.FC = () => {
             onMouseOut={handleTextMouseOut}
             data-index={item.index}
             className={`${activeText?.dataset?.index === String(item.index) ? 'text-google-lightGrey' : ''} transition-all duration-300`}
+            // the Text shadow glow effect
             style={{ textShadow: activeText?.dataset?.index === String(item.index) ? '0 0 3px rgba(150, 150, 150, 0.8), 0 0 5px rgba(150, 150, 150, 0.6), 0 0 1px rgba(150, 150, 150, 0.4)' : 'none' }}
             >
             {item.text}
