@@ -4,27 +4,27 @@ import Scene from './Scene';
 
 const Hero = () => {
   return (
-    <div className="relative flex items-center justify-center w-full h-screen">
-      {/* Tunnel SVG with margins */}
-      <div className="absolute inset-0 m-2 sm:m-4 md:m-8 ">
+    <div className="relative flex items-center justify-center w-full h-screen overflow-hidden">
+      {/* Tunnel SVG with proper responsiveness */}
+      <div className="absolute inset-0">
         <div className="relative w-full h-full">
           <Image
             src="/assets/svgs/Tunnel.svg"
             layout="fill"
             priority
             alt="Tunnel"
-            className="object-contain"
+            className="object-cover" // Ensures it covers the entire background without stretching
           />
         </div>
       </div>
 
       {/* 3D Scene */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 z-0">
         <Scene />
       </div>
 
       {/* GDG-USAR Text */}
-      <div className="absolute bottom-1/4 z-10 text-center">
+      <div className="absolute bottom-1/4 z-10 text-center w-full">
         <h1 className="text-5xl font-bold text-white sm:text-6xl lg:text-7xl">
           GDG-USAR
         </h1>
