@@ -11,7 +11,7 @@ export default function Home() {
       {/* Main content */}
       <div className="">
         <main className="relative z-10">
-          <section className=''>
+          <section className='h-screen w-full'>
             <Hero/>
           </section>
 

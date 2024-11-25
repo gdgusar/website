@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { FaInstagram, FaXTwitter, FaLinkedin } from "react-icons/fa6";
 import { HiOutlineShieldCheck } from "react-icons/hi2";
+
 const Footer: React.FC = () => {
   return (
     <div className="min-w-full px-8 sm:px-12 md:px-8 xl:px-48 bg-google-black text-white capitalize">
@@ -12,7 +13,8 @@ const Footer: React.FC = () => {
               src="/assets/GDG-logo.svg"
               alt="logo"
               width={200}
-              height={100}
+              height={50}
+              style={{ width: 'auto', height: 'auto' }}
             />
             <span className="text-google-lightGrey font-sora text-lg absolute -right-4 -top-2">
               &copy;
