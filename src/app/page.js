@@ -3,6 +3,8 @@ import React from 'react';
 import Hero from './components/hero';
 import BentoGrid from './components/BentoGrid';
 import WeTextSection from './components/WeTextSection';
+import Parallax from './components/parallax';
+
 
 export default function Home() {
   return (
@@ -22,6 +24,11 @@ export default function Home() {
           <section>
             <WeTextSection />
           </section>
+
+          <section>
+            <Parallax/>
+          </section>
+
         </main>
       </div>
     </div>
