@@ -3,7 +3,10 @@ import Hero from './components/hero';
 import Footer from './components/Footer';
 import BentoGrid from './components/BentoGrid';
 import WeTextSection from './components/WeTextSection';
+
+import Parallax from './components/parallax';
 import ScrambleText from './components/ScrambleText'; // Add this line
+
 
 export default function Home() {
   return (
@@ -24,9 +27,16 @@ export default function Home() {
           <section className="container mx-auto">
             <WeTextSection />
           </section>
+
+          <section>
+            <Parallax/>
+          </section>
+
+
           <section className="container mx-auto">
             <ScrambleText />
           </section>
+
         </main>
       </div>
       <Footer/>
