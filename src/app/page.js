@@ -3,7 +3,8 @@ import Hero from './components/hero';
 import Footer from './components/Footer';
 import BentoGrid from './components/BentoGrid';
 import WeTextSection from './components/WeTextSection';
-
+import AboutUs from './components/AboutUs';
+import Belt from './components/Belt'
 import Parallax from './components/parallax';
 import ScrambleText from './components/ScrambleText'; // Add this line
 
@@ -18,6 +19,14 @@ export default function Home() {
             <Hero/>
           </section>
   
+
+          <section>
+            <AboutUs/>
+          </section>
+
+          <section>
+            <Belt/>
+          </section>
 
           <section className="container mx-auto px-4 md:px-6 lg:px-8 py-12 md:py-16 lg:py-20">
             <div className="max-w-7xl mx-auto">
