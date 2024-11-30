@@ -11,7 +11,6 @@
   }
 }
 
-
 @layer components{
   .flex-center {
     @apply flex justify-center items-center;
@@ -58,4 +57,52 @@
   mix-blend-mode: soft-light;
   pointer-events: none;
   z-index: 100;
+}
+
+/* Preloader styles */
+.preloader-container {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.ring {
+  transform-origin: center;
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.ring svg {
+  transform-origin: center;
+  display: block;
+}
+
+.ring path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: drawPath 1s ease forwards;
+}
+
+@keyframes drawPath {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Ring animations */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
 }
