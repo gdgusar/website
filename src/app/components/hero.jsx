@@ -6,15 +6,6 @@ import Head from 'next/head';
 const Hero = () => {
   return (
     <>
-      <Head>
-        <link
-          rel="preload"
-          href="/fonts/your-bold-font.woff2"  // Update this with your actual font path
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-      </Head>
       <div className="relative flex items-center justify-center w-full h-screen overflow-hidden">
         {/* Tunnel SVG with proper responsiveness */}
         <div className="absolute inset-0">

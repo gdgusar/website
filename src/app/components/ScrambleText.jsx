@@ -6,7 +6,7 @@ import { gsap } from 'gsap';
 const ScrambleText = () => {
   const textRefs = useRef([]);
   const containerRef = useRef(null);
-  const isFirstSetRef = useRef(true);
+  const [isAlternateSet, setIsAlternateSet] = useState(false);
   const [displayTexts, setDisplayTexts] = useState([
     "CODE CRAFT", "TECH PULSE", "BUILD NEXT", "AI FUTURE",
     "DEV SPARK", "INNOVATE", "CLOUD PRO", "QUANTUM",
@@ -19,6 +19,13 @@ const ScrambleText = () => {
     "TECH EDGE", "CODE ART", "WEB THREE", "INSPIRE",
     "API CRAFT", "APP MAKER", "DEV GURU", "AI MASTER",
     "SEC MIND", "SYS ARCH", "LIVE CODE", "EVOLVE"
+  ], []);
+
+  const defaultTexts = useMemo(() => [
+    "CODE CRAFT", "TECH PULSE", "BUILD NEXT", "AI FUTURE",
+    "DEV SPARK", "INNOVATE", "CLOUD PRO", "QUANTUM",
+    "DATA FLOW", "APP FORGE", "FULL STACK", "ML VISION",
+    "CYBER OPS", "DEV TOOLS", "CODE LIFE", "LEVEL UP"
   ], []);
 
   const validateText = (text) => {
@@ -138,21 +145,26 @@ const ScrambleText = () => {
       if (isTransitioning) return;
       isTransitioning = true;
       
-      const nextTexts = isFirstSetRef.current ? alternateTexts : displayTexts;
-      
-      if (!validateTextArray(nextTexts)) {
-        console.error('Invalid text format detected');
-        isTransitioning = false;
-        return;
-      }
-
       try {
+        // Reset any active animations
+        activeIndices.clear();
+        
+        const nextTexts = isAlternateSet ? defaultTexts : alternateTexts;
+        
+        if (!validateTextArray(nextTexts)) {
+          console.error('Invalid text format detected');
+          isTransitioning = false;
+          return;
+        }
+
         const promises = textRefs.current.map((element, idx) => {
           return scrambleText(element, nextTexts[idx], true);
         });
+        
         await Promise.all(promises);
+        
         setDisplayTexts(nextTexts);
-        isFirstSetRef.current = !isFirstSetRef.current;
+        setIsAlternateSet(!isAlternateSet);
       } catch (error) {
         console.error('Switch texts error:', error);
       } finally {
@@ -223,7 +235,7 @@ const ScrambleText = () => {
       clearInterval(switchInterval);
       gsap.killTweensOf({});
     };
-  }, [displayTexts, alternateTexts, validateTextArray]);
+  }, [displayTexts, alternateTexts, defaultTexts, validateTextArray]);
 
   return (
     <div className="w-full max-w-7xl mx-auto py-4 sm:py-8 md:py-12" ref={containerRef}>

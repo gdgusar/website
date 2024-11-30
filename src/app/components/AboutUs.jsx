@@ -56,9 +56,9 @@ const AboutUs = () => {
   };
 
   const items = [
-    { text: "Learn", image: "/assets/svgs/gear.svg" },
-    { text: "Connect", image: "/assets/svgs/arrowgrow.svg" },
-    { text: "Grow", image: "/assets/illustrations/earth.png" },
+    { text: "Learn", image: "/assets/illustrations/bulb.svg" },
+    { text: "Connect", image: "/assets/illustrations/hashtag.png" },
+    { text: "Grow", image: "/assets/illustrations/arrow.svg" },
   ];
 
   return (

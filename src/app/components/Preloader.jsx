@@ -14,64 +14,72 @@ const Preloader = () => {
   useEffect(() => {
     let timeoutId;
     const ctx = gsap.context(() => {
-      // Initial animations
-      gsap.set(component.current, { opacity: 1 });
-      gsap.set(logoRef.current, { scale: 0, rotation: 0 });
+      // Start with everything visible but scaled
+      gsap.set(component.current, { opacity: 0 });
+      gsap.set(logoRef.current, { scale: 0.8, opacity: 1 });
       gsap.set([ring1Ref.current, ring2Ref.current, ring3Ref.current], { 
-        scale: 0.5,
-        opacity: 0,
-        rotation: -180
+        scale: 0.9,
+        opacity: 0.8,
+        rotation: 0
       });
 
-      // Entrance animation
-      const tl = gsap.timeline();
-      
-      // Logo animation
-      tl.to(logoRef.current, {
-        scale: 1,
-        duration: 1,
-        ease: "elastic.out(1, 0.5)"
-      })
-      // Rings animation
-      .to([ring1Ref.current, ring2Ref.current, ring3Ref.current], {
-        scale: 1,
+      // Immediate rotation animations
+      const startRotations = () => {
+        // Logo wiggle
+        gsap.to(logoRef.current, {
+          rotation: "+=6",
+          duration: 3,
+          repeat: -1,
+          yoyo: true,
+          ease: "sine.inOut"
+        });
+
+        // Rotating rings
+        gsap.to(ring1Ref.current, {
+          rotation: 360,
+          duration: 6,
+          repeat: -1,
+          ease: "none"
+        });
+
+        gsap.to(ring2Ref.current, {
+          rotation: -360,
+          duration: 8,
+          repeat: -1,
+          ease: "none"
+        });
+
+        gsap.to(ring3Ref.current, {
+          rotation: 360,
+          duration: 10,
+          repeat: -1,
+          ease: "none"
+        });
+      };
+
+      // Start rotations immediately
+      startRotations();
+
+      // Fade in the entire component
+      gsap.to(component.current, {
         opacity: 1,
-        rotation: 0,
-        duration: 0.8,
-        stagger: 0.15,
-        ease: "back.out(1.7)"
-      }, "-=0.5");
-
-      // Continuous animations
-      // Logo wiggle
-      gsap.to(logoRef.current, {
-        rotation: "+=6",
-        duration: 3,
-        repeat: -1,
-        yoyo: true,
-        ease: "sine.inOut"
-      });
-
-      // Rotating rings
-      gsap.to(ring1Ref.current, {
-        rotation: 360,
-        duration: 6,
-        repeat: -1,
-        ease: "none"
-      });
-
-      gsap.to(ring2Ref.current, {
-        rotation: -360,
-        duration: 8,
-        repeat: -1,
-        ease: "none"
-      });
-
-      gsap.to(ring3Ref.current, {
-        rotation: 360,
-        duration: 10,
-        repeat: -1,
-        ease: "none"
+        duration: 0.3,
+        ease: "power2.inOut",
+        onComplete: () => {
+          // Subtle scale animation for everything
+          gsap.to(logoRef.current, {
+            scale: 1,
+            duration: 0.8,
+            ease: "back.out(1.7)"
+          });
+          gsap.to([ring1Ref.current, ring2Ref.current, ring3Ref.current], {
+            scale: 1,
+            opacity: 1,
+            duration: 0.6,
+            stagger: 0.1,
+            ease: "back.out(1.2)"
+          });
+        }
       });
 
       // Set minimum display time
@@ -100,10 +108,9 @@ const Preloader = () => {
           duration: 0.3,
           ease: "power2.inOut"
         }, "-=0.3");
-      }, 2500);
+      }, 2000); // Reduced to 2 seconds for better UX
     });
 
-    // Cleanup function
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
       ctx.revert();

@@ -15,15 +15,15 @@ export const BENTO_ACTIVITY_IMAGES = [
     image: "/assets/illustrations/mikes.png",
   },
   {
-    activity: "socialize",
+    activity: "EVolve",
     frame: "square",
-    image: "/assets/illustrations/hashtag.png",
+    image: "/assets/illustrations/scales.svg",
   },
 ];
 
 export const WE_TEXT_IMAGES = [
-  { index: 1, text:"we enjoy" ,image: "/assets/illustrations/game-console.png" },
-  { index: 2, text:"we evolve" ,image: "/assets/illustrations/hashtag.png" },
-  { index: 3, text:"we develop" ,image: "/assets/illustrations/earth.png" },
-  { index: 4, text:"we support" ,image: "/assets/illustrations/mikes.png" },
+  { index: 1, text:"we enjoy" ,image: "/assets/illustrations/audio boombox.svg" },
+  { index: 2, text:"we evolve" ,image: "/assets/illustrations/gear.svg" },
+  { index: 3, text:"we develop" ,image: "/assets/illustrations/chess.svg" },
+  { index: 4, text:"we support" ,image: "/assets/illustrations/winner'scup.svg" },
 ];

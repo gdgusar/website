@@ -32,6 +32,10 @@ export default function Home() {
             <BentoGrid />
           </section>
 
+          <section>
+            <Belt/>
+          </section>
+
           <section className="container mx-auto">
             <WeTextSection />
           </section>
