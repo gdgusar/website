@@ -22,7 +22,7 @@ export const BENTO_ACTIVITY_IMAGES = [
 ];
 
 export const WE_TEXT_IMAGES = [
-  { index: 1, text:"we enjoy" ,image: "/assets/illustrations/audio boombox.svg" },
+  { index: 1, text:"we enjoy" ,image: "/assets/illustrations/audioboombox.svg" },
   { index: 2, text:"we evolve" ,image: "/assets/illustrations/gear.svg" },
   { index: 3, text:"we develop" ,image: "/assets/illustrations/chess.svg" },
   { index: 4, text:"we support" ,image: "/assets/illustrations/winner'scup.svg" },

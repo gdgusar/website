@@ -38,7 +38,7 @@ const Hero = () => {
               textRendering: 'optimizeLegibility'
             }}
           >
-            GDG-USAR
+            GDG USAR
           </h1>
         </div>
       </div>
