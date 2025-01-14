@@ -9,7 +9,7 @@ import AboutUs from './components/AboutUs';
 import Belt from './components/Belt';
 import Parallax from './components/parallax';
 import ScrambleText from './components/ScrambleText';
-import TeamForm from './components/TeamForm';
+import OurTeam from './components/OurTeam';
 
 // Dynamically import Preloader with no SSR
 const Preloader = dynamic(() => import('./components/Preloader'), {
@@ -51,6 +51,10 @@ export default function Home() {
             
             <section>
               <Parallax/>
+            </section>
+
+            <section>
+              <OurTeam/>  
             </section>
 
             <section className="container mx-auto">

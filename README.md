@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# GDG USAR Website
 
-## Getting Started
+This repository contains the source code for the Google Developer Groups (GDG) USAR website.
+https://www.sanity.io/plugins/next-sanity
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Folder Structure
+```
+GDG_USAR_website/
+├── src/                  # Source files
+│   ├── components/      # React components
+│   ├── pages/          # Page components
+│   ├── styles/         # CSS/SCSS files
+│   └── assets/         # Images, fonts, etc.
+├── public/             # Static files
+├── config/             # Configuration files
+├── .env               # Environment variables
+└── README.md          # Documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Setup Environment
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### Prerequisites
+- Node.js (v14.0.0 or higher)
+- npm (v6.0.0 or higher)
+- Git
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Installation Steps
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/GDG_USAR_website.git
+cd GDG_USAR_website
+```
 
-## Learn More
+2. Install dependencies:
+```bash
+npm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+3. Create `.env` file in root directory and add necessary environment variables:
+```
+REACT_APP_API_URL=your_api_url
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+4. Start development server:
+```bash
+npm start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Important Notes
+- Always create new branches for features/fixes
+- Follow commit message conventions
+- Keep dependencies updated
+- Run tests before pushing code
 
-## Deploy on Vercel
+## Crucial Files
+- `package.json`: Contains project dependencies and scripts
+- `.env`: Environment variables (don't commit this file)
+- `.gitignore`: Lists files/folders to ignore in version control
+- `src/index.js`: Application entry point
+- `src/App.js`: Main application component
+- `config/webpack.config.js`: Webpack configuration
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+This project is licensed under the MIT License.

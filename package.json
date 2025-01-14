@@ -16,6 +16,7 @@
     "@splinetool/react-spline": "^4.0.0",
     "@types/three": "^0.170.0",
     "appwrite": "^16.1.0",
+    "dotenv": "^16.4.7",
     "gsap": "^3.12.5",
     "next": "^14.2.23",
     "next-sanity": "^9.8.35",
