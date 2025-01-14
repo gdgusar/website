@@ -42,7 +42,7 @@
 *.sw?
 
 # sanity
-sanity/sanity.cli.ts
-sanity/sanity.config.ts
-*/sanity/sanity.cli.ts
-*/sanity/sanity.config.ts
+# sanity
+/sanity/sanity.cli.ts
+/sanity/sanity.config.ts
+/sanity/utils/sanityClient.ts
