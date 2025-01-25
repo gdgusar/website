@@ -15,7 +15,7 @@ export const BENTO_ACTIVITY_IMAGES = [
     image: "/assets/illustrations/mikes.png",
   },
   {
-    activity: "EVolve",
+    activity: "Evolve",
     frame: "square",
     image: "/assets/illustrations/scales.svg",
   },
