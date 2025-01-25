@@ -9,6 +9,26 @@ gsap.registerPlugin(ScrollTrigger);
 
 const OurTeam: React.FC = () => {
   const sectionRef = useRef(null);
+  const [teamMembers, setTeamMembers] = useState([]);
+
+  useEffect(() => {
+      client
+          .fetch(
+              `*[_type == "teamMember" && (designation == "lead" || designation == "coLead" || designation == "organizer")]{
+                  _id,
+                  name,
+                  "imageUrl": image.asset->url,
+                  designation,
+                  "orderValue": select(
+                      designation == "organizer" => 3,
+                      designation == "lead" => 2,
+                      designation == "coLead" => 1
+                  )
+              } | order(orderValue desc)`
+          )
+          .then((data) => setTeamMembers(data))
+          .catch(console.error);
+  }, []);
 
   useEffect(() => {
     const frames = sectionRef.current.querySelectorAll(".frame");
@@ -45,9 +65,9 @@ const OurTeam: React.FC = () => {
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-8 lg:gap-y-0">
-        {Array.from({ length: 9 }).map((_, index) => (
+        {teamMembers.map((member, index) => (
           <div
-            key={index}
+          key={member._id}
             className={`relative w-full frame ${
               index % 3 === 0 ? "lg:mt-0" : index % 3 === 1 ? "lg:mt-20" : "lg:mt-40"
             }`}
@@ -70,8 +90,8 @@ const OurTeam: React.FC = () => {
                 className="w-full z-10"
               />
               <Image
-                src={"/assets/svgs/image1.png"}
-                alt={index.toString()}
+                 src={urlFor(member.imageUrl).url()}
+                 alt={member.name}
                 width={200}
                 height={200}
                 className="w-full p-9 md:p-7 lg:p-9 absolute inset-0 object-cover rounded-lg -z-10"
@@ -79,9 +99,9 @@ const OurTeam: React.FC = () => {
             </div>
             <div className="py-4 flex justify-around items-center ">
               <h3 className="text-2xl font-sora font-bold text-white">
-                Text {index}
+              {member.designation}
               </h3>
-              <p className="text-lg font-sora text-white">name of {index}</p>
+              <p className="text-lg font-sora text-white">{member.name}</p>
             </div>
           </div>
         ))}
