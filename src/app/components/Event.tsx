@@ -4,7 +4,7 @@ import Belt from "./Belt";
 
 const Event: React.FC = () => {
   return (
-    <div className="w-full mx-auto md:px-12 relative">
+    <div className="w-full mx-auto md:px-12 relative" id="events">
       <div className="w-full ml-4 md:ml-0 flex justify-center items-center mb-4">
         <h2
           className="text-4xl md:text-5xl font-sora mb-8 text-center uppercase text-white bg-gradient-to-r from-google-lightBlue to-google-lightYellow bg-clip-text text-transparent"

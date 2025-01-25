@@ -62,7 +62,7 @@ const AboutUs = () => {
   ];
 
   return (
-    <div className="relative w-full min-h-screen">
+    <div className="relative w-full min-h-screen" id="aboutUs">
       {/* About Us Heading with Down Arrow */}
       <div className="absolute top-0 left-0 w-full p-6 md:p-10">
         <div className="flex items-center justify-center space-x-4">

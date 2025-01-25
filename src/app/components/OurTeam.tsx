@@ -31,7 +31,7 @@ const OurTeam: React.FC = () => {
   }, []);
 
   return (
-    <div ref={sectionRef} className="container mx-auto px-12">
+    <div ref={sectionRef} className="container mx-auto px-12" id="ourTeam">
       <div className="w-full ml-4 md:ml-0 flex justify-center items-center mb-8">
         <h2 className="text-3xl md:text-5xl font-sora mb-8 text-center uppercase text-white bg-gradient-to-r from-google-lightBlue to-google-lightYellow bg-clip-text text-transparent" style={{ textShadow: '0 0 3px rgba(150, 150, 150, 0.8), 0 0 5px rgba(150, 150, 150, 0.6), 0 0 1px rgba(150, 150, 150, 0.4)'}}>
           Our Team
