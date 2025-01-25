@@ -20,7 +20,7 @@ export default function Home() {
   return (
     <>
       {/* Preloader outside of Suspense */}
-      <Preloader />
+      {/* <Preloader /> */}
       
       <div className="">
         <Suspense fallback={null}>

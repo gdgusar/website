@@ -4,10 +4,11 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
+import { twMerge } from "tailwind-merge";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Belt = () => {
+const Belt = ({className = ''}) => {
   const beltRef = useRef(null);
   const bodyRef = useRef(null);
 
@@ -35,7 +36,7 @@ const Belt = () => {
   return (
     <div
       ref={bodyRef}
-      className="w-full h-full overflow-hidden py-8 mb-24" // Increased height
+      className={twMerge("w-full h-full overflow-hidden py-8 mb-24", className)} // Increased height
     >
       <div 
       className="w-[250vw] h-auto -left-[50vw]"
