@@ -43,7 +43,7 @@ const OurTeam: React.FC = () => {
         stagger: 0.2,
         scrollTrigger: {
           trigger: sectionRef.current,
-          start: "top 80%",
+          start: "top 50%",
           toggleActions: "play reverse play reverse",
         },
       }
