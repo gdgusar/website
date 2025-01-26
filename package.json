@@ -16,6 +16,8 @@
     "@splinetool/react-spline": "^4.0.0",
     "@types/three": "^0.170.0",
     "dotenv": "^16.4.7",
+    "embla-carousel-autoplay": "^8.5.2",
+    "embla-carousel-react": "^8.5.2",
     "gsap": "^3.12.5",
     "next": "^14.2.23",
     "next-sanity": "^9.8.35",
