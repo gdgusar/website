@@ -20,9 +20,10 @@ const Footer: React.FC = () => {
   };
 
   return (
-    <div className="min-w-full px-8 sm:px-12 md:px-8 xl:px-48 bg-google-black text-white capitalize">
+    <div className="min-w-full px-0 sm:px-12 md:px-8 xl:px-48 pt-8 pb-1 mt-4 bg-google-black text-white capitalize border-t border-white/10">
+      <div className="w-full h-full bg-black absolute inset-0 opacity-30 backdrop-blur-3xl"></div>
       <div className="w-full relative gap-8 py-2 flex flex-col sm:flex-row justify-center items-start ">
-        <div className="w-full md:w-auto flex items-center justify-start px-10">
+        <div className="w-full md:w-auto flex items-center justify-center md:justify-start px-10">
           <Link href="https://gdg.community.dev/gdg-on-campus-university-school-of-automation-robotics-delhi-india/" passHref>
           <div className="relative">
             <Image
@@ -38,7 +39,7 @@ const Footer: React.FC = () => {
           </div>
           </Link>
         </div>
-        <div className="max-w-[400px] w-full flex justify-around items-center md:justify-center md:gap-12">
+        <div className="max-w-[600px] w-full md:w-auto  flex justify-around items-center md:justify-center md:gap-12">
           <div>
             <h1 className="text-xl font-light font-sora mb-4 uppercase">
               Socials

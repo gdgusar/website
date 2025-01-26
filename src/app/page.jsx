@@ -1,16 +1,15 @@
 'use client';
-import React, { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import Hero from './components/hero';
-import Footer from './components/Footer';
-import BentoGrid from './components/BentoGrid';
-import WeTextSection from './components/WeTextSection';
+import { Suspense } from 'react';
 import AboutUs from './components/AboutUs';
 import Belt from './components/Belt';
+import BentoGrid from './components/BentoGrid';
+import Event from './components/Event';
+import Hero from './components/hero';
+import OurTeam from './components/OurTeam';
 import Parallax from './components/parallax';
 import ScrambleText from './components/ScrambleText';
-import OurTeam from './components/OurTeam';
-import Event from './components/Event';
+import WeTextSection from './components/WeTextSection';
 
 // Dynamically import Preloader with no SSR
 const Preloader = dynamic(() => import('./components/Preloader'), {
@@ -68,7 +67,7 @@ export default function Home() {
 
           </main>
         </Suspense>
-        <Footer/>
+       
       </div>
     </>
   );

@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import "./globals.css";
 import { Sora, Noto_Sans } from 'next/font/google';
 
@@ -21,8 +22,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${sora.variable} ${notoSans.variable}`}>
-      <body className={`noise-background font-noto-sans`}>
-        {children}
+      <body className={`noise-background font-noto-sans flex flex-col min-h-screen`}>
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer/>
       </body>
     </html>
   );
