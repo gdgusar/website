@@ -31,7 +31,9 @@ const Footer: React.FC = () => {
               alt="logo"
               width={200}
               height={50}
-              style={{ width: "auto", height: "auto" }}
+              style={{ width: "100%", height: "auto" }}
+              loading="lazy"
+              
             />
             <span className="text-google-lightGrey font-sora text-lg absolute -right-4 -top-2">
               &copy;

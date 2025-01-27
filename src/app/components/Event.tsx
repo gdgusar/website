@@ -16,44 +16,14 @@ const Event: React.FC = () => {
       name: "name of 2",
     },
     {
-      image: "/assets/images/event-3.jpg",
+      image: "/assets/images/event-1.jpg",
       date: "23 NOV 2024",
       name: "name of 3",
     },
     {
-      image: "/assets/images/event-4.jpg",
+      image: "/assets/images/event-2.jpg",
       date: "23 NOV 2024",
       name: "name of 4",
-    },
-    {
-      image: "/assets/images/event-5.jpg",
-      date: "23 NOV 2024",
-      name: "name of 5",
-    },
-    {
-      image: "/assets/images/event-6.jpg",
-      date: "23 NOV 2024",
-      name: "name of 6",
-    },
-    {
-      image: "/assets/images/event-7.jpg",
-      date: "23 NOV 2024",
-      name: "name of 7",
-    },
-    {
-      image: "/assets/images/event-8.jpg",
-      date: "23 NOV 2024",
-      name: "name of 8",
-    },
-    {
-      image: "/assets/images/event-9.jpg",
-      date: "23 NOV 2024",
-      name: "name of 9",
-    },
-    {
-      image: "/assets/images/event-10.jpg",
-      date: "23 NOV 2024",
-      name: "name of 10",
     }
   ]
   const pastEvents = [
@@ -68,45 +38,16 @@ const Event: React.FC = () => {
       name: "name of 2",
     },
     {
-      image: "/assets/images/event-3.jpg",
+      image: "/assets/images/event-1.jpg",
       date: "23 NOV 2024",
       name: "name of 3",
     },
     {
-      image: "/assets/images/event-4.jpg",
+      image: "/assets/images/event-2.jpg",
       date: "23 NOV 2024",
       name: "name of 4",
     },
-    {
-      image: "/assets/images/event-5.jpg",
-      date: "23 NOV 2024",
-      name: "name of 5",
-    },
-    {
-      image: "/assets/images/event-6.jpg",
-      date: "23 NOV 2024",
-      name: "name of 6",
-    },
-    {
-      image: "/assets/images/event-7.jpg",
-      date: "23 NOV 2024",
-      name: "name of 7",
-    },
-    {
-      image: "/assets/images/event-8.jpg",
-      date: "23 NOV 2024",
-      name: "name of 8",
-    },
-    {
-      image: "/assets/images/event-9.jpg",
-      date: "23 NOV 2024",
-      name: "name of 9",
-    },
-    {
-      image: "/assets/images/event-10.jpg",
-      date: "23 NOV 2024",
-      name: "name of 10",
-    }
+
   ]
 
   return (
@@ -154,7 +95,7 @@ const Event: React.FC = () => {
         className="w-full"
           />
         </div>
-        <EventCarousel events={pastEvents} options={{ loop: true, skipSnaps: true, align: "start", autoplay: false }}/>
+        <EventCarousel events={pastEvents} options={{ loop: false, skipSnaps: true, align: "start", autoplay: false, dragfree:true }}/>
       </div>
     </div>
   );

@@ -1,74 +1,71 @@
-'use client';
-import dynamic from 'next/dynamic';
-import { Suspense } from 'react';
-import AboutUs from './components/AboutUs';
-import Belt from './components/Belt';
-import BentoGrid from './components/BentoGrid';
-import Event from './components/Event';
-import Hero from './components/hero';
-import OurTeam from './components/OurTeam';
-import Parallax from './components/parallax';
-import ScrambleText from './components/ScrambleText';
-import WeTextSection from './components/WeTextSection';
+"use client";
+import { Suspense } from "react";
+import {
+  AboutUs,
+  Belt,
+  BentoGrid,
+  Event,
+  Footer,
+  Hero,
+  OurTeam,
+  Parallax,
+  ScrambleText,
+  WeTextSection,
+} from "./components";
+import Preloader from "./components/Preloader";
 
-// Dynamically import Preloader with no SSR
-const Preloader = dynamic(() => import('./components/Preloader'), {
-  ssr: false
-});
+
 
 export default function Home() {
   return (
     <>
       {/* Preloader outside of Suspense */}
-      {/* <Preloader /> */}
-      
-      <div className="">
-        <Suspense fallback={null}>
-          <main className="relative z-10">
-            <section className='h-screen w-full'>
-              <Hero/>
-            </section>
-            
-            <section>
-              <AboutUs/>
-            </section>
-            
-            <section>
-              <Belt/>
-            </section>
-            
-            <section className="container mx-auto">
-              <BentoGrid />
-            </section>
-            
-            <section>
-              <Belt/>
-            </section>
-            
-            <section className="container mx-auto">
-              <WeTextSection />
-            </section>
-            
-            <section>
-              <Parallax/>
-            </section>
+      <Preloader />
 
-            <section>
-              <OurTeam/>  
-            </section>
+      <Suspense fallback={null}>
+        <main className="relative z-10">
+          <section className="h-screen w-full">
+            <Hero />
+          </section>
 
-            <section>
-              <Event />
-            </section>
+          <section>
+            <AboutUs />
+          </section>
 
-            <section className="container mx-auto">
-              <ScrambleText />
-            </section>
+          <section>
+            <Belt />
+          </section>
 
-          </main>
-        </Suspense>
-       
-      </div>
+          <section className="container mx-auto">
+            <BentoGrid />
+          </section>
+
+          <section>
+            <Belt />
+          </section>
+
+          <section className="container mx-auto">
+            <WeTextSection />
+          </section>
+
+          <section>
+            <Parallax />
+          </section>
+
+          <section>
+            <OurTeam />
+          </section>
+
+          <section>
+            <Event />
+          </section>
+
+          <section className="container mx-auto">
+            <ScrambleText />
+          </section>
+        </main>
+        <Footer />
+      </Suspense>
     </>
   );
 }

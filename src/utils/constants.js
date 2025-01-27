@@ -1,3 +1,9 @@
+export const ABOUT_US_IMAGES = [
+  { text: "Learn", image: "/assets/illustrations/bulb.png" },
+  { text: "Connect", image: "/assets/illustrations/hashtag.png" },
+  { text: "Grow", image: "/assets/illustrations/arrow.png" },
+];
+
 export const BENTO_ACTIVITY_IMAGES = [
   {
     activity: "challenge",
@@ -17,15 +23,15 @@ export const BENTO_ACTIVITY_IMAGES = [
   {
     activity: "Evolve",
     frame: "square",
-    image: "/assets/illustrations/scales.svg",
+    image: "/assets/illustrations/scales.png",
   },
 ];
 
 export const WE_TEXT_IMAGES = [
-  { index: 1, text: "we enjoy", image: "/assets/illustrations/audioboombox.svg" },
-  { index: 2, text: "we evolve", image: "/assets/illustrations/gear.svg" },
-  { index: 3, text: "we develop", image: "/assets/illustrations/chess.svg" },
-  { index: 4, text: "we support", image: "/assets/illustrations/winner'scup.svg" },
+  { index: 1, text: "we enjoy", image: "/assets/illustrations/audioboombox.png" },
+  { index: 2, text: "we evolve", image: "/assets/illustrations/gear.png" },
+  { index: 3, text: "we develop", image: "/assets/illustrations/chess.png" },
+  { index: 4, text: "we support", image: "/assets/illustrations/winnerscup.png" },
 ];
 
 export const SOCIALS = [
