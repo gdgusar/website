@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef} from "react";
+import { useEffect, useMemo, useRef} from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
@@ -16,12 +16,18 @@ const crossData = [
 
 const Parallax = () => {
 
-    const crossRefs = crossData.reduce((acc, { ref }) => {
-        acc[ref] = useRef(null);
-        return acc;
-    }, {});
-
+    const cross1Ref = useRef(null);
+    const cross2Ref = useRef(null);
+    const cross3Ref = useRef(null);
+    const cross4Ref = useRef(null);
     const body1Ref = useRef(null);
+
+    const crossRefs = useMemo(() => ({
+        cross1Ref,
+        cross2Ref,
+        cross3Ref,
+        cross4Ref,
+    }), [cross1Ref, cross2Ref, cross3Ref, cross4Ref]);
     
     useEffect(() => {
 
@@ -49,14 +55,14 @@ const Parallax = () => {
             });
         }
         });
-    }, []);
+    }, [crossRefs, body1Ref]);
 
     return (
-        <div className="h-full w-full flex flex-col items-center justify-center overflow-hidden py-10">
+        <div className="h-full w-full flex flex-col items-center justify-center overflow-hidden py-10 select-none">
             <div className="w-full h-10"/>
             <div
                 ref={body1Ref}
-                className="w-full h-screen flex flex-col items-start justify-center py-10 space-y-5 rotate-12"
+                className="w-full h-full flex flex-col items-start justify-center py-10 space-y-5 rotate-12"
             >
                 {crossData.map(({ ref }, index) => (
                 <div
@@ -73,7 +79,7 @@ const Parallax = () => {
                 </div>
                 ))}
             </div>
-            <div className="w-full h-[300px]"/>
+            {/* <div className="w-full h-[300px]"/> */}
         </div>
   );
 };
