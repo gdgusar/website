@@ -32,6 +32,11 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name:"joinedgdgusar",
+      title:"YEAR IN WHICH GDG MEMBER JOINED",
+      type:"string",
+    },
+    {
       name: "branch",
       title: "Branch",
       type: "string",
