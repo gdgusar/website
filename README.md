@@ -33,7 +33,7 @@ cd GDG_USAR_website
 
 2. Install dependencies:
 ```bash
-npm install
+npm install --legacy-peer-deps
 ```
 
 3. Create `.env` file in root directory and add necessary environment variables:
