@@ -1,41 +1,26 @@
 "use client";
-
-import { useEffect, useMemo, useRef} from "react";
+import { useEffect, useRef} from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
-
 gsap.registerPlugin(ScrollTrigger);
-
 const crossData = [
   { ref: "cross1Ref", direction: -75, scrub: 1, duration: 1 },
   { ref: "cross2Ref", direction: -150, scrub: 2, duration: 3 },
   { ref: "cross3Ref", direction: -100, scrub: 1, duration: 4 },
   { ref: "cross4Ref", direction: -120, scrub: 2, duration: 2 },
 ];
-
 const Parallax = () => {
-
-    const cross1Ref = useRef(null);
-    const cross2Ref = useRef(null);
-    const cross3Ref = useRef(null);
-    const cross4Ref = useRef(null);
+    const crossRefs = crossData.reduce((acc, { ref }) => {
+        acc[ref] = useRef(null);
+        return acc;
+    }, {});
     const body1Ref = useRef(null);
-
-    const crossRefs = useMemo(() => ({
-        cross1Ref,
-        cross2Ref,
-        cross3Ref,
-        cross4Ref,
-    }), [cross1Ref, cross2Ref, cross3Ref, cross4Ref]);
     
     useEffect(() => {
-
         const body1 = body1Ref.current;
-
         crossData.forEach(({ ref, direction, scrub, duration }) => {
         const crossElement = crossRefs[ref].current;
-
         if (crossElement && body1) {
             gsap.to(crossElement, {
             transform: "translateX(-10%)",
@@ -55,14 +40,13 @@ const Parallax = () => {
             });
         }
         });
-    }, [crossRefs, body1Ref]);
-
+    }, []);
     return (
-        <div className="h-full w-full flex flex-col items-center justify-center overflow-hidden py-10 select-none">
+        <div className="h-full w-full flex flex-col items-center justify-center overflow-hidden py-10">
             <div className="w-full h-10"/>
             <div
                 ref={body1Ref}
-                className="w-full h-full flex flex-col items-start justify-center py-10 space-y-5 rotate-12"
+                className="w-full h-screen flex flex-col items-start justify-center py-10 space-y-5 rotate-12"
             >
                 {crossData.map(({ ref }, index) => (
                 <div
@@ -79,9 +63,8 @@ const Parallax = () => {
                 </div>
                 ))}
             </div>
-            {/* <div className="w-full h-[300px]"/> */}
+            <div className="w-full h-[300px]"/>
         </div>
   );
 };
-
 export default Parallax;
