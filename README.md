@@ -36,14 +36,9 @@ cd GDG_USAR_website
 npm install --legacy-peer-deps
 ```
 
-3. Create `.env` file in root directory and add necessary environment variables:
-```
-REACT_APP_API_URL=your_api_url
-```
-
-4. Start development server:
+3. Start development server:
 ```bash
-npm start
+npm run dev
 ```
 
 ## Important Notes
