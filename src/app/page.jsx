@@ -1,19 +1,16 @@
 "use client";
 import { Suspense } from "react";
-import {
-  AboutUs,
-  Belt,
-  BentoGrid,
-  Event,
-  Footer,
-  Hero,
-  OurTeam,
-  Parallax,
-  ScrambleText,
-  WeTextSection,
-} from "./components";
 import Preloader from "./components/Preloader";
-
+import Hero from "./components/Hero";
+import AboutUs from "./components/AboutUs";
+import Belt from "./components/Belt";
+import BentoGrid from "./components/BentoGrid";
+import WeTextSection from "./components/WeTextSection";
+import Parallax from "./components/Parallax";
+import OurTeam from "./components/OurTeam";
+import Event from "./components/Event";
+import ScrambleText from "./components/ScrambleText";
+import Footer from "./components/Footer";
 
 
 export default function Home() {
