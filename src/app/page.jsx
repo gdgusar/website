@@ -7,7 +7,7 @@ import Belt from "./components/Belt";
 import BentoGrid from "./components/BentoGrid";
 import WeTextSection from "./components/WeTextSection";
 import Parallax from "./components/Parallax";
-import OurTeam from "./components/OurTeam";
+import OurTeam from "./components/OnlyLeads";
 import Event from "./components/Event";
 import ScrambleText from "./components/ScrambleText";
 import Footer from "./components/Footer";
