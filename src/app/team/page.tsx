@@ -61,6 +61,7 @@ export default function Page() {
   const activeChapters = teamsByYear[activeYear];
 
   return (
+    // MODIFY CODE FROM HERE TO ADD PAGINATION CONTROLS for YEAR WISE AND OTHER UI STUFF TO DISPLAY TEAM MEMBERS
     <div className="container mx-auto p-6">
       <h1 className="text-3xl font-bold text-center mb-6">GDG USAR Team</h1>
 
