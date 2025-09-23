@@ -89,7 +89,7 @@ export default function Page() {
         <div key={chapter} className="mb-8">
           <h2 className="text-xl font-semibold mb-3 text-blue-600">{chapter} Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {members.map((member) => (
+            {members?.map((member) => (
               <div key={member.name} className="p-4 border rounded-lg shadow-md bg-white">
                 <Image
                   src={member.imageUrl}
@@ -107,12 +107,12 @@ export default function Page() {
                 <div className="flex justify-center gap-4 mt-2">
                   {member.linkedin && (
                     <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                      <img src="/linkedin.svg" alt="LinkedIn" width={24} height={24} />
+                      <Image src="/linkedin.svg" alt="LinkedIn" width={24} height={24} />
                     </a>
                   )}
                   {member.github && (
                     <a href={member.github} target="_blank" rel="noopener noreferrer">
-                      <img src="/github.svg" alt="GitHub" width={24} height={24} />
+                      <Image src="/github.svg" alt="GitHub" width={24} height={24} />
                     </a>
                   )}
                 </div>

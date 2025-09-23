@@ -4,9 +4,9 @@ import { visionTool } from '@sanity/vision';
 import { schemaTypes } from './schemaTypes';
 
 export default defineConfig({
-  name: "gdgusarwebsite",
-  title: "gdgusarwebsite",
-  projectId:"enlu62ww" ,
+  name: "gdgusar",
+  title: "gdgusar",
+  projectId:"k9r7o650" ,
   dataset: "production",
 
   plugins: [structureTool(), visionTool()],

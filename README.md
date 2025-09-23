@@ -41,6 +41,35 @@ npm install --legacy-peer-deps
 npm run dev
 ```
 
+## Sanity CMS
+
+- Studio lives under `sanity/` and uses project `k9r7o650`, dataset `production`.
+- Frontend reads these via env: `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`.
+
+### Configure
+- Create `.env` from `.env.example` in the repo root and set the IDs.
+- In Sanity manage (manage.sanity.io), add your frontend domain(s) to CORS (no credentials needed for public reads).
+
+### Develop Studio locally
+```bash
+cd sanity
+npm install
+npm run dev
+```
+Studio runs locally and is not served by Next.js.
+
+### Deploy Studio (separate URL)
+```bash
+cd sanity
+npm run deploy
+```
+This publishes Studio to `https://<projectId>.sanity.studio`. Keep Studio separate from your frontend domain so it is not accessible within the production app.
+
+If you want to embed Studio in the Next app for dev-only, you can add a route that renders Studio only when `process.env.NODE_ENV !== 'production'` and otherwise returns 404. By default, this project does not embed Studio.
+
+### Tokens (optional)
+Public content queries use the CDN without tokens. For private docs or draft previews, create a read token in Sanity and set `SANITY_API_READ_TOKEN`; use it only in server-side code.
+
 ## Important Notes
 - Always create new branches for features/fixes
 - Follow commit message conventions

@@ -4,7 +4,7 @@ import client from '../../utils/sanityClient';
 
 async function fetchOurTeam() {
     const query = `
-    *[_type == "teamMember" && (designation == "lead" || designation == "coLead" || designation == "organizer")] {
+    *[_type == "teamMember" && designation in ["lead", "coLead", "organizer"]] {
         name,
         "imageUrl": image.asset->url,
         designation,
@@ -14,9 +14,14 @@ async function fetchOurTeam() {
             designation == "coLead" => 1
         )
     } | order(orderValue desc)`;
-    
-    const data = await client.fetch(query);
-    return data;
+
+    try {
+        const data = await client.fetch(query);
+        return data;
+    } catch (e) {
+        console.error('Sanity fetch error (OnlyLeads):', e);
+        return [];
+    }
 }
 
 export default function OurTeam() {
@@ -33,6 +38,9 @@ export default function OurTeam() {
     return (
         <div className="container mx-auto py-8 justify-center text-center">
             <h1 className="text-4xl md:text-6xl font-bold text-white">Our Team</h1>
+            {teamMembers.length === 0 ? (
+                <p className="mt-4 text-gray-300">No core team members found yet.</p>
+            ) : (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
                 {teamMembers.map((member, index) => (
                     <div 
@@ -54,6 +62,7 @@ export default function OurTeam() {
                     </div>
                 ))}
             </div>
+            )}
         </div>
     );
 }

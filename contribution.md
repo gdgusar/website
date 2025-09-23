@@ -17,6 +17,8 @@ git pull
 ```bash
 # Rename the current branch to 'branch-name'
 git branch -m branch-name
+
+## `feature/your-feature-name` or `fix/your-fix-name`
 ```
 
 

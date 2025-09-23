@@ -11,12 +11,18 @@ const crossData = [
   { ref: "cross4Ref", direction: -120, scrub: 2, duration: 2 },
 ];
 const Parallax = () => {
-    const crossRefs = crossData.reduce((acc, { ref }) => {
-        acc[ref] = useRef(null);
-        return acc;
-    }, {});
+    const cross1Ref = useRef(null);
+    const cross2Ref = useRef(null);
+    const cross3Ref = useRef(null);
+    const cross4Ref = useRef(null);
+    const crossRefs = {
+        cross1Ref,
+        cross2Ref,
+        cross3Ref,
+        cross4Ref,
+    };
     const body1Ref = useRef(null);
-    
+
     useEffect(() => {
         const body1 = body1Ref.current;
         crossData.forEach(({ ref, direction, scrub, duration }) => {
