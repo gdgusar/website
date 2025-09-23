@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef} from "react";
+import { useEffect, useRef, useMemo} from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
@@ -15,12 +15,15 @@ const Parallax = () => {
     const cross2Ref = useRef(null);
     const cross3Ref = useRef(null);
     const cross4Ref = useRef(null);
-    const crossRefs = {
-        cross1Ref,
-        cross2Ref,
-        cross3Ref,
-        cross4Ref,
-    };
+    const crossRefs = useMemo(
+        () => ({
+            cross1Ref,
+            cross2Ref,
+            cross3Ref,
+            cross4Ref,
+        }),
+        [cross1Ref, cross2Ref, cross3Ref, cross4Ref]
+    );
     const body1Ref = useRef(null);
 
     useEffect(() => {
@@ -46,7 +49,7 @@ const Parallax = () => {
             });
         }
         });
-    }, []);
+    }, [crossRefs]);
     return (
         <div className="h-full w-full flex flex-col items-center justify-center overflow-hidden py-10">
             <div className="w-full h-10"/>

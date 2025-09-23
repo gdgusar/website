@@ -3,10 +3,31 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import client from "../../utils/sanityClient";
+import Link from "next/link";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Page() {
-  const [teamsByYear, setTeamsByYear] = useState({});
-  const [years, setYears] = useState([]);
+  type Member = {
+    name: string;
+    designation: string;
+    branch: string;
+    chapterName?: string;
+    startYear: string;
+    endYear: string;
+    joinedgdgusar?: string;
+    imageUrl: string;
+    linkedin?: string;
+    github?: string;
+  };
+
+  type TeamsByYear = {
+    [year: string]: {
+      [chapter: string]: Member[];
+    };
+  };
+
+  const [teamsByYear, setTeamsByYear] = useState<TeamsByYear>({});
+  const [years, setYears] = useState<string[]>([]);
   const [activeYearIndex, setActiveYearIndex] = useState(0);
 
   useEffect(() => {
@@ -106,14 +127,14 @@ export default function Page() {
                 </p>
                 <div className="flex justify-center gap-4 mt-2">
                   {member.linkedin && (
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                      <Image src="/linkedin.svg" alt="LinkedIn" width={24} height={24} />
-                    </a>
+                    <Link href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                      <FaLinkedin size={24} className="hover:text-sky-600 hover:scale-105 transition-transform duration-300 ease-in-out"/>
+                    </Link>
                   )}
                   {member.github && (
-                    <a href={member.github} target="_blank" rel="noopener noreferrer">
-                      <Image src="/github.svg" alt="GitHub" width={24} height={24} />
-                    </a>
+                    <Link href={member.github} target="_blank" rel="noopener noreferrer">
+                      <FaGithub size={24} className="hover:text-slate-600 hover:scale-105 transition-transform duration-300 ease-in-out"/>
+                    </Link>
                   )}
                 </div>
               </div>
