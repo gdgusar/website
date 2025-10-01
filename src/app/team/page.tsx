@@ -2,7 +2,6 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import client from "../../utils/sanityClient";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
@@ -30,51 +29,51 @@ export default function Page() {
   const [years, setYears] = useState<string[]>([]);
   const [activeYearIndex, setActiveYearIndex] = useState(0);
 
-  useEffect(() => {
-    async function fetchTeam() {
-      const query = `
-        *[_type == "teamMember"] | order(joinedgdgusar asc, startYear asc) {
-          name,
-          designation,
-          branch,
-          chapterName,
-          startYear,
-          endYear,
-          joinedgdgusar,
-          "imageUrl": image.asset->url,
-          linkedin,
-          github
-        }
-      `;
+  // useEffect(() => {
+  //   async function fetchTeam() {
+  //     const query = `
+  //       *[_type == "teamMember"] | order(joinedgdgusar asc, startYear asc) {
+  //         name,
+  //         designation,
+  //         branch,
+  //         chapterName,
+  //         startYear,
+  //         endYear,
+  //         joinedgdgusar,
+  //         "imageUrl": image.asset->url,
+  //         linkedin,
+  //         github
+  //       }
+  //     `;
 
-      const data = await client.fetch(query);
+  //     // const data = await client.fetch(query);
 
-      // Sorting by role: Organizer > Lead > CoLead > Member
-      const designationOrder = { organizer: 1, lead: 2, coLead: 3, member: 4 };
-      data.sort(
-        (a, b) =>
-          (designationOrder[a.designation] || 99) -
-          (designationOrder[b.designation] || 99)
-      );
+  //     // Sorting by role: Organizer > Lead > CoLead > Member
+  //     // const designationOrder = { organizer: 1, lead: 2, coLead: 3, member: 4 };
+  //     // data.sort(
+  //     //   (a, b) =>
+  //     //     (designationOrder[a.designation] || 99) -
+  //     //     (designationOrder[b.designation] || 99)
+  //     // );
 
-      // Grouping members by YEAR -> CHAPTER
-      const grouped = data.reduce((acc, member) => {
-        const year = member.joinedgdgusar || member.startYear;
-        const chapter = member.chapterName || "LEADS";
-        if (!acc[year]) acc[year] = {};
-        if (!acc[year][chapter]) acc[year][chapter] = [];
-        acc[year][chapter].push(member);
-        return acc;
-      }, {});
+  //     // Grouping members by YEAR -> CHAPTER
+  //     // const grouped = data.reduce((acc, member) => {
+  //     //   const year = member.joinedgdgusar || member.startYear;
+  //     //   const chapter = member.chapterName || "LEADS";
+  //     //   if (!acc[year]) acc[year] = {};
+  //     //   if (!acc[year][chapter]) acc[year][chapter] = [];
+  //     //   acc[year][chapter].push(member);
+  //     //   return acc;
+  //     // }, {});
 
-      const sortedYears = Object.keys(grouped).sort();
+  //     const sortedYears = Object.keys(grouped).sort();
 
-      setTeamsByYear(grouped);
-      setYears(sortedYears);
-    }
+  //     setTeamsByYear(grouped);
+  //     setYears(sortedYears);
+  //   }
 
-    fetchTeam();
-  }, []);
+  //   fetchTeam();
+  // }, []);
 
   if (years.length === 0) return <div className="p-6 text-center">Loading...</div>;
 
