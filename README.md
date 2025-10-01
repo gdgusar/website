@@ -3,20 +3,6 @@
 This repository contains the source code for the Google Developer Groups (GDG) USAR website.
 https://www.sanity.io/plugins/next-sanity
 
-## Folder Structure
-```
-GDG_USAR_website/
-├── src/                  # Source files
-│   ├── components/      # React components
-│   ├── pages/          # Page components
-│   ├── styles/         # CSS/SCSS files
-│   └── assets/         # Images, fonts, etc.
-├── public/             # Static files
-├── config/             # Configuration files
-├── .env               # Environment variables
-└── README.md          # Documentation
-```
-
 ## Setup Environment
 
 ### Prerequisites
