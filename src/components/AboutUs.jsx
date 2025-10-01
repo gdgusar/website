@@ -1,5 +1,5 @@
 "use client";
-import { ABOUT_US_IMAGES as items } from "../../utils/constants";
+import { ABOUT_US_IMAGES as items } from "@/utils/constants";
 import gsap from "gsap";
 import Image from "next/image";
 import { useRef } from "react";

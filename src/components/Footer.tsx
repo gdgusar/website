@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { FaInstagram, FaTwitter, FaLinkedin } from "react-icons/fa";
 import { HiOutlineShieldCheck } from "react-icons/hi2";
-import { SOCIALS } from "../../utils/constants";
+import { SOCIALS } from "@/utils/constants";
 import Link from "next/link";
 
 const Footer: React.FC = () => {
