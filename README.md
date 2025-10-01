@@ -3,7 +3,6 @@
 This repository contains the source code for the Google Developer Groups (GDG) USAR website.
 https://www.sanity.io/plugins/next-sanity
 
-## Setup Environment
 
 ### Prerequisites
 - Node.js (v14.0.0 or higher)
