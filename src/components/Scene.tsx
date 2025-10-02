@@ -2,10 +2,11 @@
 import { useRef, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
+import { Object3D } from "three";
 
 const RotatingLogo = () => {
   const { scene } = useGLTF("/assets/models/gdg_logo_updated.glb");
-  const logoRef = useRef();
+  const logoRef = useRef<Object3D>(null);
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   const [logoScale, setLogoScale] = useState(1.5); // Default scale
 

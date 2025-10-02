@@ -14,7 +14,7 @@ import Footer from "@/components/Footer";
 import TeamList from "@/components/TeamList";
 
 
-export default function Home() {
+export default function Home(): JSX.Element {
   return (
     <>
       {/* Preloader outside of Suspense */}

@@ -20,12 +20,12 @@ const Belt = ({className = ''}) => {
           trigger: bodyRef.current,
           start: "top bottom",
           end: "top -100%",
-          ease: "power1.out",
           scrub: 1,
           onUpdate: (self) => {
             gsap.to(beltRef.current, {
               x: `${-100 * self.progress}vw`,
               duration: 2,
+              ease: "power1.out",
             });
           },
         },

@@ -112,7 +112,7 @@ const ScrambleText = () => {
     };
 
     const scrambleText = (element, targetText, isTransition = false) => {
-      return new Promise((resolve) => {
+      return new Promise<void>((resolve) => {
         const duration = isTransition ? 0.6 : 1.2;
         const steps = Math.floor(duration * 60); // 60fps
         let frame = 0;
