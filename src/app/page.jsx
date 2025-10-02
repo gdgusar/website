@@ -11,6 +11,7 @@ import OurTeam from "@/components/OnlyLeads";
 import Event from "@/components/Event";
 import ScrambleText from "@/components/ScrambleText";
 import Footer from "@/components/Footer";
+import TeamList from "@/components/TeamList";
 
 
 export default function Home() {
@@ -49,8 +50,8 @@ export default function Home() {
             <Parallax />
           </section>
 
-          <section>
-            <OurTeam />
+          <section className="container mx-auto">
+            <TeamList />
           </section>
 
           <section>
