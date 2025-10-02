@@ -1,6 +1,4 @@
-/**
- * @type {import('next').NextConfig}
- */
+/** @type {import('next').NextConfig} */
 
 const nextConfig = {
   /* config options here */
@@ -8,10 +6,10 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'cdn.sanity.io',
+        hostname: 'fra.cloud.appwrite.io',
       },
     ],
-  }
+  },
 }
  
-module.exports = nextConfig
+export default nextConfig

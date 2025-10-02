@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Scene from "./Scene";
-import Head from "next/head";
 
 const Hero = () => {
   return (
@@ -26,7 +25,7 @@ const Hero = () => {
 
         {/* 3D Scene - Load after main content */}
         <div className="absolute inset-0 z-0">
-          <Scene priority={false} />
+          <Scene/>
         </div>
 
         {/* GDG-USAR Text - Optimized for LCP */}
@@ -34,7 +33,6 @@ const Hero = () => {
           <h1
             className="text-5xl font-bold text-white sm:text-6xl lg:text-7xl"
             style={{
-              fontDisplay: "swap",
               textRendering: "optimizeLegibility",
             }}
           >

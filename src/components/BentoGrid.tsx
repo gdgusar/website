@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import SplitType from "split-type";
 import gsap from "gsap";
 import Image from "next/image";
-import {BENTO_ACTIVITY_IMAGES as activities} from "../../utils/constants";
+import {BENTO_ACTIVITY_IMAGES as activities} from "@/utils/constants";
 
 const BentoGrid: React.FC = () => {
   return (

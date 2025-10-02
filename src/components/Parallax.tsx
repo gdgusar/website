@@ -37,12 +37,11 @@ const Parallax = () => {
                 trigger: body1,
                 start: "top bottom",
                 end: "top -100%",
-                ease: "power1.out",
                 scrub,
                 onUpdate: (self) => {
                 gsap.to(crossElement, {
                     x: `${direction * self.progress}vw`,
-                    duration,
+                    duration, ease: "power1.out",
                 });
                 },
             },
