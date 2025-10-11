@@ -1,0 +1,16 @@
+export const teamMembers = [
+  { name: "Vaibee", role: "Engineering", image: "/team/avatar1.png", link: "https://www.karenlee.me/" },
+  { name: "Katherine Liu", role: "Design Lead", image: "/team/avatar2.png", link: "https://linkedin.com/in/katherine" },
+  { name: "Arjun Patel", role: "Product Manager", image: "/team/avatar1.png", link: "https://linkedin.com/in/arjun-patel" },
+  { name: "Lina Zhang", role: "Frontend Developer", image: "/team/avatar1.png", link: "https://github.com/linazhang" },
+  { name: "Mohammed Ali", role: "Backend Developer", image: "/team/avatar2.png", link: "https://github.com/mohammedali" },
+  { name: "Sara Khan", role: "UI/UX Designer", image: "/team/avatar1.png", link: "https://linkedin.com/in/sarakhan" },
+  { name: "David Lee", role: "Engineering", image: "/team/avatar1.png", link: "https://linkedin.com/in/davidlee" },
+  { name: "Emily Chen", role: "Marketing", image: "/team/avatar2.png", link: "https://www.emilychen.com" },
+  { name: "Ravi Singh", role: "DevOps", image: "/team/avatar1.png", link: "https://github.com/ravisingh" },
+  { name: "Nina Torres", role: "Frontend Developer", image: "/team/avatar1.png", link: "https://linkedin.com/in/ninatorres" },
+  { name: "Leo Martins", role: "Backend Developer", image: "/team/avatar2.png", link: "https://github.com/leomartins" },
+  { name: "Sophia Williams", role: "Product Manager", image: "/team/avatar1.png", link: "https://linkedin.com/in/sophiaw" },
+  { name: "Akira Tanaka", role: "Engineering", image: "/team/avatar1.png", link: "https://www.akira.com" },
+  { name: "Maria Gonzalez", role: "Design Lead", image: "/team/avatar2.png", link: "https://linkedin.com/in/mariagonzalez" },
+]
