@@ -6,6 +6,7 @@ interface TeamCardProps {
   image: string;
   link: string;
   color?: string;
+  priority?: boolean;
 }
 
 const colorClasses: Record<string, string> = {
@@ -21,6 +22,7 @@ export const TeamCard = ({
   image,
   link,
   color = "blue-300",
+  priority = false,
 }: TeamCardProps) => {
   const classes = colorClasses[color];
 
@@ -40,6 +42,8 @@ export const TeamCard = ({
           src={image}
           alt={name}
           fill
+          sizes="104px"
+          priority={priority}
           className="object-cover rounded-full transition-transform duration-300"
         />
         <div

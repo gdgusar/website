@@ -50,5 +50,6 @@
 
 # environment variables
 /sanity/.env.local
-*.env*
-.env
+.env.local
+.env.production
+.env.development

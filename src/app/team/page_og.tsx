@@ -1,6 +1,5 @@
 "use client";
 
-import { useTeamMembers } from "@/hooks/useTeamMembers";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -9,7 +8,7 @@ import clsx from "clsx";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function Page() {
-  const { team, isLoading, isError } = useTeamMembers();
+  const { team, isLoading, isError } = { team: [], isLoading: false, isError: null };
   const [activeYearIndex, setActiveYearIndex] = useState(0);
 
   if (isLoading) return <div className="p-6 text-center">Loading...</div>;

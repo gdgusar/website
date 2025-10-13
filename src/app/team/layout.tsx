@@ -1,13 +1,11 @@
+// @ts-ignore
 import "../globals.css";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function TeamLayout({ children }: { children: React.ReactNode }) {
+  // Do not render <html> or <body> here — root layout already provides them.
   return (
-    <html lang="en">
-      <body className="bg-[#D2E3FC] -z-10 font-noto-sans">{children}</body>
-    </html>
+    <div className="bg-[#D2E3FC] -z-10 font-noto-sans">
+      {children}
+    </div>
   );
 }

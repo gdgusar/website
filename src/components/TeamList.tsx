@@ -1,12 +1,11 @@
 'use client'; // This component fetches data, so it must be a Client Component
 
-import { useTeamMembers } from '@/hooks/useTeamMembers';
 import Image from 'next/image';
 import { Card, CardContent } from "@/components/ui/card";
 import { FaLinkedin } from 'react-icons/fa';
 
 export default function TeamList() {
-  const { team, isLoading, isError } = useTeamMembers();
+  const { team, isLoading, isError } =  { team: [], isLoading: false, isError: null };
 
   if (isLoading) {
     return <div>Loading team members...</div>;
