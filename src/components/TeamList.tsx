@@ -1,26 +1,25 @@
-'use client'; // This component fetches data, so it must be a Client Component
-
 import Image from 'next/image';
 import { Card, CardContent } from "@/components/ui/card";
 import { FaLinkedin } from 'react-icons/fa';
+import { getTeamMembersServer } from '@/hooks/useTeamMembers';
 
-export default function TeamList() {
-  const { team, isLoading, isError } =  { team: [], isLoading: false, isError: null };
+export default async function TeamList() {
+  const { data: team, loading, error } = await getTeamMembersServer();
 
-  if (isLoading) {
+  if (loading) {
     return <div>Loading team members...</div>;
   }
 
-  if (isError) {
+  if (error) {
     return <div>Failed to load team members.</div>;
   }
 
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '16px' }}>
+    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '28px' , paddingBottom:'48px', justifyContent: 'center' }}>
       {team && team.map((member: any) => (
-        <Card key={member.$id} className="w-full max-w-sm transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,241,0.5)] hover:scale-105 bg-white/5 border border-white/10 backdrop-blur-lg rounded-3xl p-10 group">
+        <Card key={member.$id} className="w-full max-w-[240px] transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,255,241,0.5)] hover:scale-105 bg-white/5 border border-white/10 backdrop-blur-lg rounded-3xl p-4 group">
           <CardContent className="flex flex-col items-center text-center relative">
-            <div className="relative mb-6">
+            <div className="relative mb-4">
               {member.imageUrl && (
                 <Image
                   src={member.imageUrl}
